@@ -15,9 +15,9 @@ const config = defineConfig({
         popup: resolve(__dirname, "src/popup/index.html"),
         sidePanel: resolve(__dirname, "src/sidePanel/index.html"),
         "content-script": resolve(__dirname, "src/content/main.tsx"),
-        "service-worker": resolve(__dirname, "src/background/service-worker.ts"),
+        "background-script": resolve(__dirname, "src/background/service-worker.ts"),
       },
-      output: {
+        output: {
         entryFileNames: `[name]/[name].js`,
       }
     },
