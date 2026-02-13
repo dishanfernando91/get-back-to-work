@@ -1,0 +1,5 @@
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('root');
+const root = createRoot(container as HTMLDivElement);
+root.render(<h1>New Content!</h1>);

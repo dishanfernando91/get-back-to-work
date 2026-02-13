@@ -13,8 +13,13 @@ const config = defineConfig({
       input: {
         options: resolve(__dirname, "src/options/index.html"),
         popup: resolve(__dirname, "src/popup/index.html"),
-        sidePanel: resolve(__dirname, "src/sidePanel/index.html")
+        sidePanel: resolve(__dirname, "src/sidePanel/index.html"),
+        "content-script": resolve(__dirname, "src/content/main.tsx"),
+        "service-worker": resolve(__dirname, "src/background/service-worker.ts"),
       },
+      output: {
+        entryFileNames: `[name]/[name].js`,
+      }
     },
   },
 });
