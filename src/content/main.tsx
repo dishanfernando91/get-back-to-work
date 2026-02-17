@@ -1,22 +1,9 @@
 import { createRoot } from 'react-dom/client';
 
-const ROOT_ID = 'my-extension-root';
+import App from './App'
 
-function init() {
-  if (document.getElementById(ROOT_ID)) return;
+const container = document.getElementById('root');
+const root = createRoot(container as HTMLDivElement);
+root.render(<App />);
 
-  const overlay = document.createElement("div");
 
-  overlay.id = ROOT_ID;
-  
-  if (document.body) {
-    document.body.appendChild(overlay);
-    
-    const root = createRoot(overlay);
-    root.render(<h1>Hello world! from content</h1>);
-  } else {
-    window.addEventListener('DOMContentLoaded', init);
-  }
-}
-
-init();

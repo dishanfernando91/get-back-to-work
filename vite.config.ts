@@ -14,12 +14,19 @@ const config = defineConfig({
         options: resolve(__dirname, "src/options/index.html"),
         popup: resolve(__dirname, "src/popup/index.html"),
         sidePanel: resolve(__dirname, "src/sidePanel/index.html"),
-        "content-script": resolve(__dirname, "src/content/main.tsx"),
+        "content-script": resolve(__dirname, "src/content/content-script.ts"),
+        "content-script/main": resolve(__dirname, "src/content/main.tsx"), 
         "background-script": resolve(__dirname, "src/background/service-worker.ts"),
       },
-        output: {
-        entryFileNames: `[name]/[name].js`,
-      }
+      output: {
+        entryFileNames: (chunkInfo) => {
+          if (chunkInfo.name === "content-script") return "content-script/content-script.js";
+          if (chunkInfo.name === "content-script/main") return "content-script/main.js";
+          return "[name]/[name].js";
+        },
+        chunkFileNames: "[name]/[name].js",
+        assetFileNames: "[name]/[name].[ext]",
+      },
     },
   },
 });

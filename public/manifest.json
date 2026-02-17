@@ -17,8 +17,12 @@
       "matches": ["<all_urls>"],
       "js": [
         "./content-script/content-script.js"
-      ]
-    }
-  ],
+      ],
+      "type": "module"
+    }],
+  "web_accessible_resources": [{
+    "resources": ["content-script/main.js", "main/main.css", "client/client.js"],
+    "matches": ["<all_urls>"]
+  }],
   "permissions": ["storage", "scripting", "activeTab", "sidePanel"]
 }
