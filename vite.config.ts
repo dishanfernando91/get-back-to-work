@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
 
   const input =
     VITE_MODE === "DEV"
-      ? resolve(__dirname, "src/content/main.tsx")
+      ? resolve(__dirname, "src/main.tsx")
       : {
           options: resolve(__dirname, "src/options/index.html"),
           popup: resolve(__dirname, "src/popup/index.html"),
@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
             "src/background/service-worker.ts",
           ),
         };
+
   return {
     plugins: [react()],
     build: {

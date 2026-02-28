@@ -1,42 +1,98 @@
-.App {
-  text-align: center;
+:root {
+  --bg-black: #0a0a0a;
+  --muted-red: rgba(180, 40, 40, 0.4);
+  --dark-red: rgba(120, 20, 20, 0.2);
+  --text-main: #e0e0e0;
+  --text-muted: #888;
+  --border-color: rgba(255, 255, 255, 0.05);
 }
 
-.App-logo {
-  height: 50px;
-  pointer-events: none;
+body {
+  background-color: var(--bg-black);
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text-main);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* 3. Large Bolded Message */
+.main-message {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  /* text-transform: uppercase; */
+  letter-spacing: -1px;
+  background: linear-gradient(to bottom, #fff, #666);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 1 & 4. The Centered Box */
+.glass-box {
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(145deg, #111, #050505);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+/* 1 & 5. Header & Blended Buttons */
+.filter-header {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-button {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: var(--dark-red);
+  color: #ff4d4d;
+}
+
+/* 2. Body Components */
+.box-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ff4d4d; /* Muted Red Highlight */
+  text-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
 }
