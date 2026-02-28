@@ -15,7 +15,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://www.reddit.com/*"],
       "js": ["./content-script/content-script.js"],
       "type": "module"
     }
@@ -27,7 +27,7 @@
         "main/main.css",
         "client/client.js"
       ],
-      "matches": ["<all_urls>"]
+      "matches": ["https://www.reddit.com/*"]
     }
   ],
   "permissions": ["storage", "scripting", "activeTab", "sidePanel"]
