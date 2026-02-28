@@ -9,20 +9,26 @@
   "side_panel": {
     "default_path": "../src/sidePanel/index.html"
   },
-  "options_page" : "../src/options/index.html",
+  "options_page": "../src/options/index.html",
   "background": {
     "service_worker": "./background-script/background-script.js"
-    },
-  "content_scripts": [{
+  },
+  "content_scripts": [
+    {
       "matches": ["<all_urls>"],
-      "js": [
-        "./content-script/content-script.js"
-      ],
+      "js": ["./content-script/content-script.js"],
       "type": "module"
-    }],
-  "web_accessible_resources": [{
-    "resources": ["content-script/main.js", "main/main.css", "client/client.js"],
-    "matches": ["<all_urls>"]
-  }],
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content-script/main.js",
+        "main/main.css",
+        "client/client.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "permissions": ["storage", "scripting", "activeTab", "sidePanel"]
 }
